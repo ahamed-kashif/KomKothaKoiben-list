@@ -45,7 +45,20 @@ bool UnsortedCustomerList::is_empty()
 
 Customer UnsortedCustomerList::get_customer_details(int customIndex)
 {
-
+	NodeType* curr = customerList;
+	bool found = false;
+	while (curr != nullptr && !found) {
+		if (curr->info.get_customer_index() != customIndex)
+			curr = curr->next;
+		else {
+			found = true;
+			return curr->info;
+		}
+	}
+	found = false;
+	cout << endl;
+	cout << "Customer Index is not correct!!" << endl;
+	return curr->info;
 }
 
 bool UnsortedCustomerList::put_customer_details(Customer customer)

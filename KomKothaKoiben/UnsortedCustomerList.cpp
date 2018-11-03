@@ -63,6 +63,15 @@ Customer UnsortedCustomerList::get_customer_details(int customIndex)
 
 bool UnsortedCustomerList::put_customer_details(Customer customer)
 {
+	if (is_full())
+		return false;
+	NodeType* newNode = new NodeType;
+	newNode->info = customer;
+	newNode->next = customerList;
+	customerList = newNode;
+	length++;
+
+	return true;
 
 }
 

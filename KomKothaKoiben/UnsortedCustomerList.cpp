@@ -77,7 +77,27 @@ bool UnsortedCustomerList::put_customer_details(Customer customer)
 
 bool UnsortedCustomerList::delete_customer_details(int index)
 {
-
+	NodeType* curr = customerList;
+	NodeType* prev = nullptr;
+	bool found = false;
+	while (curr != nullptr && !found) {
+		if (curr->info.get_customer_index() == index) {
+			found = true;
+			if (prev == nullptr) {
+				customerList = curr->next;
+			}
+			else {
+				prev->next = curr->next;
+			}
+			delete curr;
+			length--;
+		}
+		else {
+			prev = curr;
+			curr = curr->next;
+		}
+	}
+	return found;
 
 }
 

@@ -132,3 +132,29 @@ string Person::get_hair_color()
 {
 	return hairColor;
 }
+
+//defining printing function
+void Person::print_person()
+{
+	cout << "Name:\t" + name << endl;
+	cout << "Father's Name:\t" + fatherName << endl;
+	cout << "Mother's Name:\t" + motherName << endl;
+	cout << "NID:\t";
+	for (int index = 0; index < 11; index++)
+	{
+		cout << NID[index];
+	}
+	cout << endl;
+	cout << "Age(Years):\t";
+	cout << age << endl;
+	cout << "Gender:\t";
+	cout << gender << endl;
+	cout << "Present Address:\t" + presentAddress << endl;
+	cout << "Permanent Address:\t" + permanentAddress << endl;
+	cout << "Height(Inches):\t";
+	cout << height << endl;
+	cout << "Weight(KG):\t";
+	cout << weight << endl;
+	cout << "Eye Color:\t" + eyeColor << endl;
+	cout << "Hair Color:\t" + hairColor << endl;
+}

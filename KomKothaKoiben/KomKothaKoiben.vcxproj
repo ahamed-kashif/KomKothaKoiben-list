@@ -157,6 +157,7 @@
     <ClCompile Include="Person.cpp" />
     <ClCompile Include="PhoneNumber.cpp" />
     <ClCompile Include="SortedCustomerList.cpp" />
+    <ClCompile Include="STLUnsortedCustomerList.cpp" />
     <ClCompile Include="UnsortedCustomerList.cpp" />
   </ItemGroup>
   <ItemGroup>
@@ -164,6 +165,7 @@
     <ClInclude Include="Person.h" />
     <ClInclude Include="PhoneNumber.h" />
     <ClInclude Include="SortedCustomerList.h" />
+    <ClInclude Include="STLUnsortedCustomerList.h" />
     <ClInclude Include="UnsortedCustomerList.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

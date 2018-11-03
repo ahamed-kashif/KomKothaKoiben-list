@@ -2,6 +2,8 @@
 #include "Person.h"
 #include "PhoneNumber.h"
 
+const int maxPhoneNumbers = 15;
+
 class Customer :
 	public Person
 {
@@ -21,8 +23,8 @@ public:
 	bool change_operator_name(string, string); //phone operator modifier
 	void print_customer_deatails();     //printing customer details
 
-	void set_customer_index(int);
-	int get_customer_index();
+	void set_customer_index(int);//modifier
+	int get_customer_index();//accessor
 
 };
 

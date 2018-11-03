@@ -68,7 +68,45 @@ Customer SortedCustomerList::get_customer_details(int customIndex)
 
 bool SortedCustomerList::put_customer_details(Customer customer)
 {
+	if (is_full())
+		return false;
 
+	NodeType* newNode = new NodeType;
+	newNode->info = customer;
+	NodeType* curr = customerList;
+	NodeType* prev = nullptr;
+
+	bool posFound = false;
+
+	while (curr != nullptr && !posFound) {
+		if (curr->info.get_age() < customer.get_age()) {
+			prev = curr;
+			curr = curr->next;
+		}
+		else {
+			posFound = true;
+			newNode->next = curr;
+			if (prev == nullptr) {
+				customerList = newNode;
+			}
+			else {
+				prev->next = newNode;
+			}
+		}
+	}
+	if (!posFound)
+	{
+		posFound = true;
+		newNode->next = curr;
+		if (prev == nullptr) {
+			customerList = newNode;
+		}
+		else {
+			prev->next = newNode;
+		}
+	}
+	length++;
+	return posFound;
 
 }
 

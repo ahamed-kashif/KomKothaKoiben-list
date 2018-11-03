@@ -156,11 +156,13 @@
     <ClCompile Include="KomKothaKoiben.cpp" />
     <ClCompile Include="Person.cpp" />
     <ClCompile Include="PhoneNumber.cpp" />
+    <ClCompile Include="UnsortedCustomerList.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Customer.h" />
     <ClInclude Include="Person.h" />
     <ClInclude Include="PhoneNumber.h" />
+    <ClInclude Include="UnsortedCustomerList.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

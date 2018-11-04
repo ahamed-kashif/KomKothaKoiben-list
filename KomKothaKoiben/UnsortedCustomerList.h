@@ -26,7 +26,10 @@ public:
 	Customer get_next_customer();
 	//Printing List Contents
 	void print_customer_list();
-	void insert_new_num(int,PhoneNumber);
+
+	//phone number updating
+	bool insert_new_number(int,PhoneNumber);
+	bool delete_phone_number(int,int);
 private:
 	NodeType* customerList = nullptr;
 	int length = 0;

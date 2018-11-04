@@ -131,7 +131,7 @@ void UnsortedCustomerList::print_customer_list()
 
 }
 
-void UnsortedCustomerList::insert_new_num(int customIndex, PhoneNumber phn)
+bool UnsortedCustomerList::insert_new_number(int customIndex, PhoneNumber phn)
 {
 	NodeType* curr = customerList;
 	bool found = false;
@@ -141,10 +141,31 @@ void UnsortedCustomerList::insert_new_num(int customIndex, PhoneNumber phn)
 		else {
 			found = true;
 			curr->info.insert_phone_number(phn);
+			return found;
 		}
 	}
 	found = false;
 	cout << endl;
 	cout << "Customer Index is not correct!!" << endl;
+	return found;
 	
+}
+
+bool UnsortedCustomerList::delete_phone_number(int customIndex, int phoneNumberIndex)
+{
+	NodeType* curr = customerList;
+	bool found = false;
+	while (curr != nullptr && !found) {
+		if (curr->info.get_customer_index() != customIndex)
+			curr = curr->next;
+		else {
+			found = true;
+			curr->info.delete_phone_number(phoneNumberIndex);
+			return found;
+		}
+	}
+	found = false;
+	cout << endl;
+	cout << "Customer Index or Phone Number Index is not correct!!" << endl;
+	return found;
 }

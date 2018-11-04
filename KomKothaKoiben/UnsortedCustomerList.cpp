@@ -1,4 +1,5 @@
 #include "UnsortedCustomerList.h"
+#include"PhoneNumber.h"
 #include<exception>
 #include<iostream>
 
@@ -128,4 +129,22 @@ void UnsortedCustomerList::print_customer_list()
 		get_next_customer().print_customer_deatails();
 	}
 
+}
+
+void UnsortedCustomerList::insert_new_num(int customIndex, PhoneNumber phn)
+{
+	NodeType* curr = customerList;
+	bool found = false;
+	while (curr != nullptr && !found) {
+		if (curr->info.get_customer_index() != customIndex)
+			curr = curr->next;
+		else {
+			found = true;
+			curr->info.insert_phone_number(phn);
+		}
+	}
+	found = false;
+	cout << endl;
+	cout << "Customer Index is not correct!!" << endl;
+	
 }

@@ -1,5 +1,6 @@
 #pragma once
 #include "Customer.h"
+#include"PhoneNumber.h"
 
 class UnsortedCustomerList
 {
@@ -25,6 +26,7 @@ public:
 	Customer get_next_customer();
 	//Printing List Contents
 	void print_customer_list();
+	void insert_new_num(int,PhoneNumber);
 private:
 	NodeType* customerList = nullptr;
 	int length = 0;

@@ -44,7 +44,7 @@ void PhoneNumber::set_phone_number(string phoneNum)
 
 void PhoneNumber::set_operator_name(string opName)
 {
-	if (opName == "KomKothaKoiben" || opName == "GrameenPhone" || opName == "Robi" || opName == "Teletalk")
+	if (opName == "KomKothaKoiben" || opName == "GrameenPhone" || opName == "Robi" || opName == "Teletalk"|| opName == "BanglaLink")
 	{
 		operatorName = opName;
 	}

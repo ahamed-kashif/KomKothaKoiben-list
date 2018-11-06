@@ -22,6 +22,7 @@ public:
 	PhoneNumber get_phone_numbers(int);   //retriving a phone number
 	bool change_operator_name(string, string); //phone operator modifier
 	void print_customer_deatails();     //printing customer details
+	int phone_number_get_length();
 
 	void set_customer_index(int);//modifier
 	int get_customer_index();//accessor

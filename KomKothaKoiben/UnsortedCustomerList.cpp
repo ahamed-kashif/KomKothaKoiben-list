@@ -155,12 +155,23 @@ bool UnsortedCustomerList::delete_phone_number(int customIndex, int phoneNumberI
 {
 	NodeType* curr = customerList;
 	bool found = false;
+
 	while (curr != nullptr && !found) {
+
 		if (curr->info.get_customer_index() != customIndex)
 			curr = curr->next;
+
 		else {
 			found = true;
 			curr->info.delete_phone_number(phoneNumberIndex);
+			if (curr->info.phone_number_get_length() == 0)
+			{
+				cout << curr->info.get_name() << "'s information is DELETED!!" << endl<<endl;
+				delete_customer_details(curr->info.get_customer_index());
+				
+
+			}
+
 			return found;
 		}
 	}

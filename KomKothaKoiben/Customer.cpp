@@ -29,12 +29,16 @@ void Customer::insert_phone_number(PhoneNumber phoneNumber)
 
 void Customer::delete_phone_number(int phoneNumberindex)
 {
-
-	for (int index = phoneNumberindex; index < length; index++)
+	if (phoneNumberindex < length)
 	{
-		phoneNumbers[index] = phoneNumbers[index + 1];
-		length--;
+		for (int index = phoneNumberindex; index < length; index++)
+		{
+			phoneNumbers[index] = phoneNumbers[index + 1];
+			length--;
+		}
 	}
+	else
+		cout << "Phone Number Index is not CORRECT!!";
 
 }
 
@@ -76,6 +80,11 @@ void Customer::print_customer_deatails()
 	}
 	cout << endl;
 	cout << endl;
+}
+
+int Customer::phone_number_get_length()
+{
+	return length;
 }
 
 void Customer::set_customer_index(int index)

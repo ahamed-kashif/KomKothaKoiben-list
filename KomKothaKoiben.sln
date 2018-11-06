@@ -3,7 +3,11 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.28010.2048
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "KomKothaKoiben", "KomKothaKoiben\KomKothaKoiben.vcxproj", "{320E62EC-16F3-420B-8905-061C7B077351}"
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "KomKothaKoibenUnsortedDatabase", "KomKothaKoiben\KomKothaKoiben.vcxproj", "{320E62EC-16F3-420B-8905-061C7B077351}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "KomKothaKoibenSortedDatabase", "KomKothaKoibenSortedDatabase\KomKothaKoibenSortedDatabase.vcxproj", "{97191783-11FB-48B3-8080-55C16E0217D0}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "KomKothaKoibenSTLForwardList", "KomKothaKoibenSTLForwardList\KomKothaKoibenSTLForwardList.vcxproj", "{F386F51D-6CC3-479F-A233-981527D9DE42}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -21,6 +25,22 @@ Global
 		{320E62EC-16F3-420B-8905-061C7B077351}.Release|x64.Build.0 = Release|x64
 		{320E62EC-16F3-420B-8905-061C7B077351}.Release|x86.ActiveCfg = Release|Win32
 		{320E62EC-16F3-420B-8905-061C7B077351}.Release|x86.Build.0 = Release|Win32
+		{97191783-11FB-48B3-8080-55C16E0217D0}.Debug|x64.ActiveCfg = Debug|x64
+		{97191783-11FB-48B3-8080-55C16E0217D0}.Debug|x64.Build.0 = Debug|x64
+		{97191783-11FB-48B3-8080-55C16E0217D0}.Debug|x86.ActiveCfg = Debug|Win32
+		{97191783-11FB-48B3-8080-55C16E0217D0}.Debug|x86.Build.0 = Debug|Win32
+		{97191783-11FB-48B3-8080-55C16E0217D0}.Release|x64.ActiveCfg = Release|x64
+		{97191783-11FB-48B3-8080-55C16E0217D0}.Release|x64.Build.0 = Release|x64
+		{97191783-11FB-48B3-8080-55C16E0217D0}.Release|x86.ActiveCfg = Release|Win32
+		{97191783-11FB-48B3-8080-55C16E0217D0}.Release|x86.Build.0 = Release|Win32
+		{F386F51D-6CC3-479F-A233-981527D9DE42}.Debug|x64.ActiveCfg = Debug|x64
+		{F386F51D-6CC3-479F-A233-981527D9DE42}.Debug|x64.Build.0 = Debug|x64
+		{F386F51D-6CC3-479F-A233-981527D9DE42}.Debug|x86.ActiveCfg = Debug|Win32
+		{F386F51D-6CC3-479F-A233-981527D9DE42}.Debug|x86.Build.0 = Debug|Win32
+		{F386F51D-6CC3-479F-A233-981527D9DE42}.Release|x64.ActiveCfg = Release|x64
+		{F386F51D-6CC3-479F-A233-981527D9DE42}.Release|x64.Build.0 = Release|x64
+		{F386F51D-6CC3-479F-A233-981527D9DE42}.Release|x86.ActiveCfg = Release|Win32
+		{F386F51D-6CC3-479F-A233-981527D9DE42}.Release|x86.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

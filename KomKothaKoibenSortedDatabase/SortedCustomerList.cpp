@@ -160,8 +160,8 @@ void SortedCustomerList::print_customer_list()
 {
 	for (int index = 0; index < length; index++)
 	{
-		if(has_next_customer())
-		get_next_customer().print_customer_deatails();
+		if (has_next_customer())
+			get_next_customer().print_customer_deatails();
 	}
 
 }

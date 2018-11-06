@@ -20,11 +20,10 @@
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>15.0</VCProjectVersion>
-    <ProjectGuid>{320E62EC-16F3-420B-8905-061C7B077351}</ProjectGuid>
+    <ProjectGuid>{97191783-11FB-48B3-8080-55C16E0217D0}</ProjectGuid>
     <Keyword>Win32Proj</Keyword>
-    <RootNamespace>KomKothaKoiben</RootNamespace>
+    <RootNamespace>KomKothaKoibenSortedDatabase</RootNamespace>
     <WindowsTargetPlatformVersion>10.0.17134.0</WindowsTargetPlatformVersion>
-    <ProjectName>KomKothaKoibenUnsortedDatabase</ProjectName>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
@@ -96,7 +95,6 @@
     <Link>
       <SubSystem>Console</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
-      <Driver>NotSet</Driver>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
@@ -154,16 +152,16 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="Customer.cpp" />
-    <ClCompile Include="KomKothaKoibenUnsortedDatabase.cpp" />
+    <ClCompile Include="KomKothaKoibenSortedDatabase.cpp" />
     <ClCompile Include="Person.cpp" />
     <ClCompile Include="PhoneNumber.cpp" />
-    <ClCompile Include="UnsortedCustomerList.cpp" />
+    <ClCompile Include="SortedCustomerList.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Customer.h" />
     <ClInclude Include="Person.h" />
     <ClInclude Include="PhoneNumber.h" />
-    <ClInclude Include="UnsortedCustomerList.h" />
+    <ClInclude Include="SortedCustomerList.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

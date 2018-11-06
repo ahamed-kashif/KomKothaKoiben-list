@@ -15,6 +15,9 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="KomKothaKoibenSortedDatabase.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
     <ClCompile Include="Person.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
@@ -24,10 +27,7 @@
     <ClCompile Include="PhoneNumber.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="UnsortedCustomerList.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="KomKothaKoibenUnsortedDatabase.cpp">
+    <ClCompile Include="SortedCustomerList.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
@@ -41,7 +41,7 @@
     <ClInclude Include="PhoneNumber.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="UnsortedCustomerList.h">
+    <ClInclude Include="SortedCustomerList.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

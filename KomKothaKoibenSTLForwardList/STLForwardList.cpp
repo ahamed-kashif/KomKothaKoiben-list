@@ -60,7 +60,7 @@ bool STLForwardList::delete_customer_details(int  index)
 		if (customer.get_customer_index() == index)
 		{
 
-			customerList.erase_after(it);
+			customerList.erase_after(it++);
 			return true;
 		}
 		else continue;

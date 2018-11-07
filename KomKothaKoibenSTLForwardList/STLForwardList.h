@@ -30,7 +30,9 @@ public:
 	//Printing List Contents
 	void print_customer_list();
 
-	//bool compare_customer_details(Customer);
-
+	//phone number updating
+	bool insert_new_number(int, PhoneNumber);
+	bool delete_phone_number(int, int);
+	
 };
 

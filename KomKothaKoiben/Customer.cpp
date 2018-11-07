@@ -18,6 +18,7 @@ void Customer::insert_phone_number(PhoneNumber phoneNumber)
 	if (length < maxPhoneNumbers)
 	{
 		phoneNumbers[length] = phoneNumber;
+		
 		length++;
 	}
 	else
@@ -95,4 +96,9 @@ void Customer::set_customer_index(int index)
 int Customer::get_customer_index()
 {
 	return customerIndex;
+}
+
+int Customer::phone_number_get_length()
+{
+	return length;
 }

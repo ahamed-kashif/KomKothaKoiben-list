@@ -30,6 +30,9 @@ public:
 	Customer get_next_customer();
 	//Printing List Contents
 	void print_customer_list();
+
+	bool insert_new_number(int, PhoneNumber);
+	bool delete_phone_number(int, int);
 private:
 	NodeType* customerList = nullptr;
 	int length = 0;

@@ -87,3 +87,8 @@ int Customer::get_customer_index()
 {
 	return customerIndex;
 }
+
+int Customer::phone_number_get_length()
+{
+	return length;
+}

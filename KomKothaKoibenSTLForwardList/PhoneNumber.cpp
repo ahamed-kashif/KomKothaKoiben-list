@@ -11,8 +11,15 @@ PhoneNumber::PhoneNumber()
 
 PhoneNumber::PhoneNumber(string phNumber, string opName)
 {
-	phoneNumber = phNumber;
-	operatorName = opName;
+	if (phNumber.size() == 11 && opName == "KomKothaKoiben" || opName == "GrameenPhone" || opName == "Robi" || opName == "Teletalk" || opName == "BanglaLink")
+	{
+		phoneNumber = phNumber;
+		operatorName = opName;
+	}
+	else
+	{
+		cout << "Phone number or Operator Name is not Correct!!";
+	}
 }
 
 PhoneNumber::~PhoneNumber()
@@ -22,14 +29,28 @@ PhoneNumber::~PhoneNumber()
 void PhoneNumber::set_phone_number(string phoneNum)
 {
 
-	phoneNumber = phoneNum;
+	if (phoneNum.size() == 11)
+	{
+		phoneNumber = phoneNum;
+	}
+	else
+	{
+		cout << "Number is not Correct!!";
+	}
 
 
 }
 
 void PhoneNumber::set_operator_name(string opName)
 {
-	operatorName = opName;
+	if (opName == "KomKothaKoiben" || opName == "GrameenPhone" || opName == "Robi" || opName == "Teletalk" || opName == "BanglaLink")
+	{
+		operatorName = opName;
+	}
+	else
+	{
+		cout << "Enter Correct Operator Name!!";
+	}
 }
 
 string PhoneNumber::get_phone_number()

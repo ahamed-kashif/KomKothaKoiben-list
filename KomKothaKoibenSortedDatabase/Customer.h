@@ -25,6 +25,6 @@ public:
 
 	void set_customer_index(int);//modifier
 	int get_customer_index();//accessor
-
+	int phone_number_get_length();//accessor
 };
 

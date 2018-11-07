@@ -158,6 +158,7 @@ Customer SortedCustomerList::get_next_customer()
 
 void SortedCustomerList::print_customer_list()
 {
+	cout << "List is sorted in terms of person's age" << endl;
 	for (int index = 0; index < length; index++)
 	{
 		if (has_next_customer())
@@ -166,3 +167,54 @@ void SortedCustomerList::print_customer_list()
 
 }
 
+bool SortedCustomerList::insert_new_number(int customIndex, PhoneNumber phn)
+{
+	NodeType* curr = customerList;
+	bool found = false;
+	while (curr != nullptr && !found) {
+		if (curr->info.get_customer_index() != customIndex)
+			curr = curr->next;
+		else {
+			found = true;
+			curr->info.insert_phone_number(phn);
+			cout << "New Phone Number is Added in " << curr->info.get_name() << "'s Information!!" << endl << endl;
+			return found;
+		}
+	}
+	found = false;
+	cout << endl;
+	cout << "Customer Index is not correct!!" << endl;
+	return found;
+
+}
+
+bool SortedCustomerList::delete_phone_number(int customIndex, int phoneNumberIndex)
+{
+	NodeType* curr = customerList;
+	bool found = false;
+
+	while (curr != nullptr && !found) {
+
+		if (curr->info.get_customer_index() != customIndex)
+			curr = curr->next;
+
+		else {
+			found = true;
+			curr->info.delete_phone_number(phoneNumberIndex);
+			cout << "A Phone Number is Deleted from " << curr->info.get_name() << "'s Information!!" << endl << endl;
+			if (curr->info.phone_number_get_length() == 0)
+			{
+				cout << curr->info.get_name() << "'s information is DELETED!!" << endl << endl;
+				delete_customer_details(curr->info.get_customer_index());
+
+
+			}
+
+			return found;
+		}
+	}
+	found = false;
+	cout << endl;
+	cout << "Customer Index or Phone Number Index is not correct!!" << endl;
+	return found;
+}

@@ -1,24 +1,27 @@
 #pragma once
 #include <iostream>
 #include<exception>
-#include <forward_list>
+#include <list> 
+#include <iterator> 
 #include "Customer.h"
 #include <string>
 
 using namespace std;
 
 
-class STLForwardList
+class CustomerSTLList
 {
 private:
-	std::forward_list<Customer> customerList;
-	std::forward_list<Customer>::iterator it= customerList.begin();
+	std::list<Customer> customerList;
+	std::list<Customer>::iterator it;
+
 	
-	int length;
 public:
-	STLForwardList();
-	~STLForwardList();
+	CustomerSTLList();
+	~CustomerSTLList();
+
 	//bool is_full();
+
 	int get_length();
 	void make_empty();
 	bool is_empty();
@@ -27,13 +30,13 @@ public:
 	void delete_customer_details(int);
 
 	//bool has_next_customer();
-	Customer get_next_customer();
+	//Customer get_next_customer();
 	//Printing List Contents
 	void print_customer_list();
 
 	//phone number updating
-	bool insert_new_number(int, PhoneNumber);
-	bool delete_phone_number(int, int);
-	
+	//bool insert_new_number(int, PhoneNumber);
+	//bool delete_phone_number(int, int);
+
 };
 

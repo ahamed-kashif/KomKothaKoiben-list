@@ -18,7 +18,6 @@ void Customer::insert_phone_number(PhoneNumber phoneNumber)
 	if (length < maxPhoneNumbers)
 	{
 		phoneNumbers[length] = phoneNumber;
-		
 		length++;
 	}
 	else
@@ -30,16 +29,12 @@ void Customer::insert_phone_number(PhoneNumber phoneNumber)
 
 void Customer::delete_phone_number(int phoneNumberindex)
 {
-	if (phoneNumberindex < length)
+
+	for (int index = phoneNumberindex; index < length; index++)
 	{
-		for (int index = phoneNumberindex; index < length; index++)
-		{
-			phoneNumbers[index] = phoneNumbers[index + 1];
-			length--;
-		}
+		phoneNumbers[index] = phoneNumbers[index + 1];
+		length--;
 	}
-	else
-		cout << "Phone Number Index is not CORRECT!!";
 
 }
 
@@ -83,11 +78,6 @@ void Customer::print_customer_deatails()
 	cout << endl;
 }
 
-int Customer::phone_number_get_length()
-{
-	return length;
-}
-
 void Customer::set_customer_index(int index)
 {
 	customerIndex = index;
@@ -98,3 +88,7 @@ int Customer::get_customer_index()
 	return customerIndex;
 }
 
+int Customer::phone_number_get_length()
+{
+	return length;
+}

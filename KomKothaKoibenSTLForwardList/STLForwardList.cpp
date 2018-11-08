@@ -48,32 +48,39 @@ Customer STLForwardList::get_customer_details(int index)
 
 void STLForwardList::put_customer_details(Customer customer)
 {
+	
 	customerList.push_front(customer);
 }
 
-bool STLForwardList::delete_customer_details(int  index)
+void STLForwardList::delete_customer_details(int  index)
 {
 	Customer customer;
+	std::forward_list<Customer> curr;
 	for (it = customerList.begin(); it != customerList.end(); it++)
 	{
 		customer = *it;
-		if (customer.get_customer_index() == index)
+		if (customer.get_customer_index() != index)
 		{
-
-			customerList.erase_after(it++);
-			return true;
+			
+			curr.push_front(customer);
+			
 		}
-		else continue;
+		
 	}
-	cout << "Customer Index Number does not match";
-	return false;
+	customerList = curr;
 }
 
 
 
 Customer STLForwardList::get_next_customer()
 {
-	return customerList.front();
+	
+	Customer customer;
+	it = customerList.begin();
+	it++;
+	customer = *it;
+	
+	return customer;
 }
 
 void STLForwardList::print_customer_list()

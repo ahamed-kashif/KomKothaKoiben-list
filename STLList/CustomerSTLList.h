@@ -26,7 +26,7 @@ public:
 	void make_empty();
 	bool is_empty();
 	Customer get_customer_details(int);
-	void put_customer_details(Customer);
+	bool put_customer_details(Customer);
 	void delete_customer_details(int);
 
 	//bool has_next_customer();

@@ -46,11 +46,27 @@ Customer CustomerSTLList::get_customer_details(int customerIndex)
 	return customerList.front();
 }
 
-void CustomerSTLList::put_customer_details(Customer customer)
+bool CustomerSTLList::put_customer_details(Customer customer)
 {
+	if (is_empty())
+	{
+		customerList.push_front(customer);
+		return true;
+	}
+	else
+	{
+		for (it = customerList.begin(); it != customerList.end(); it++)
+		{
+			Customer temCus = *it;
+			if (temCus.get_age() < customer.get_age() || temCus.get_age() == customer.get_age())
+			{
+				customerList.insert(it, customer);
+				return true;
+			}
+		}
+		return false;
+	}
 	
-	
-	customerList.push_front(customer);
 
 }
 

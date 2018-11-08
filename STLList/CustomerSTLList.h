@@ -14,6 +14,7 @@ class CustomerSTLList
 private:
 	std::list<Customer> customerList;
 	std::list<Customer>::iterator it;
+	
 
 	
 public:
@@ -29,13 +30,13 @@ public:
 	bool put_customer_details(Customer);
 	void delete_customer_details(int);
 
-	//bool has_next_customer();
-	//Customer get_next_customer();
+
+
 	//Printing List Contents
 	void print_customer_list();
 
 	//phone number updating
-	//bool insert_new_number(int, PhoneNumber);
+	bool insert_new_number(int, PhoneNumber);
 	//bool delete_phone_number(int, int);
 
 };

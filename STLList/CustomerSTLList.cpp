@@ -70,6 +70,22 @@ bool CustomerSTLList::put_customer_details(Customer customer)
 
 }
 
+void CustomerSTLList::delete_customer_details(int customerIndex)
+{
+	Customer temCustomer;
+	for (it = customerList.begin(); it != customerList.end(); it++)
+	{
+		temCustomer = *it;
+		if (temCustomer.get_customer_index() == customerIndex)
+		{
+			customerList.erase(it);
+			break;
+		}
+	}
+}
+
+
+
 void CustomerSTLList::print_customer_list()
 {
 	Customer customer;
@@ -79,4 +95,20 @@ void CustomerSTLList::print_customer_list()
 		customer = *it;
 		customer.print_customer_deatails();
 	}
+}
+
+bool CustomerSTLList::insert_new_number(int customerIndex, PhoneNumber phn)
+{
+	Customer customer;
+	for (it = customerList.begin(); it != customerList.end(); it++)
+	{
+		customer = *it;
+		if (customer.get_customer_index() == customerIndex)
+		{
+			customer.insert_phone_number(phn);
+			*it = customer;
+			return true;
+		}
+	}
+	return false;
 }

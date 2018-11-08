@@ -63,6 +63,11 @@ bool CustomerSTLList::put_customer_details(Customer customer)
 				customerList.insert(it, customer);
 				return true;
 			}
+			else if(temCus.get_age() > customer.get_age())
+			{
+				customerList.push_back(customer);
+				return true;
+			}
 		}
 		return false;
 	}
@@ -108,9 +113,11 @@ bool CustomerSTLList::insert_new_number(int customerIndex, PhoneNumber phn)
 		{
 			customer.insert_phone_number(phn);
 			*it = customer;
+			cout << endl << "A New Phone number is been ADDED to " << customer.get_name() << "'s deatils !!" << endl << endl;
 			return true;
 		}
 	}
+	cout << endl << "Customer Index or is not CORRECT!!" << endl << endl;
 	return false;
 }
 
@@ -124,12 +131,15 @@ bool CustomerSTLList::delete_phone_number(int customerIndex, int phoneNumberInde
 		{
 			customer.delete_phone_number(phoneNumberIndex);
 			*it = customer;
+			cout << endl << "A Number is been deleted from " << customer.get_name() << "'s deatils !!" << endl << endl;
 			if (customer.phone_number_get_length() == 0)
 			{
 				delete_customer_details(customer.get_customer_index());
 			}
+			
 			return true;
 		}
 	}
+	cout << endl << "Customer Index or Phone Number Index is not CORRECT!!" << endl << endl;
 	return false;
 }

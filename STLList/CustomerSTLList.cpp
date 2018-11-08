@@ -79,6 +79,7 @@ void CustomerSTLList::delete_customer_details(int customerIndex)
 		if (temCustomer.get_customer_index() == customerIndex)
 		{
 			customerList.erase(it);
+			cout << endl << temCustomer.get_name() << "'s deatils is been deleted!!" << endl << endl;
 			break;
 		}
 	}
@@ -107,6 +108,26 @@ bool CustomerSTLList::insert_new_number(int customerIndex, PhoneNumber phn)
 		{
 			customer.insert_phone_number(phn);
 			*it = customer;
+			return true;
+		}
+	}
+	return false;
+}
+
+bool CustomerSTLList::delete_phone_number(int customerIndex, int phoneNumberIndex)
+{
+	Customer customer;
+	for (it = customerList.begin(); it != customerList.end(); it++)
+	{
+		customer = *it;
+		if (customer.get_customer_index() == customerIndex)
+		{
+			customer.delete_phone_number(phoneNumberIndex);
+			*it = customer;
+			if (customer.phone_number_get_length() == 0)
+			{
+				delete_customer_details(customer.get_customer_index());
+			}
 			return true;
 		}
 	}

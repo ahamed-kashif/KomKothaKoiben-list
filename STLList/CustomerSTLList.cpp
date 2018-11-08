@@ -58,18 +58,17 @@ bool CustomerSTLList::put_customer_details(Customer customer)
 		for (it = customerList.begin(); it != customerList.end(); it++)
 		{
 			Customer temCus = *it;
-			if (temCus.get_age() < customer.get_age() || temCus.get_age() == customer.get_age())
+			if (temCus.get_age() > customer.get_age() || temCus.get_age() == customer.get_age())
 			{
 				customerList.insert(it, customer);
 				return true;
 			}
-			else if(temCus.get_age() > customer.get_age())
-			{
-				customerList.push_back(customer);
-				return true;
-			}
+		
 		}
-		return false;
+		customerList.push_back(customer);
+		return true;
+
+		
 	}
 	
 

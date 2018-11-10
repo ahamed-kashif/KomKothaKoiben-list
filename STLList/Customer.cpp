@@ -53,7 +53,7 @@ bool Customer::change_operator_name(string phonenumber, string operatorName)
 		{
 			phoneNumbers[index].set_operator_name(operatorName);
 			cout << endl;
-			cout << "Operator number has been changed" << endl;
+			cout <<phoneNumbers[index].get_phone_number()<< " Operator name has been changed !!" << endl;
 			return true;
 		}
 

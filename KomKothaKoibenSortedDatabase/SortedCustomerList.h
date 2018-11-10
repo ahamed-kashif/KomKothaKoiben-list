@@ -33,6 +33,7 @@ public:
 
 	bool insert_new_number(int, PhoneNumber);
 	bool delete_phone_number(int, int);
+	bool change_operator_name(int, string, string);
 private:
 	NodeType* customerList = nullptr;
 	int length = 0;

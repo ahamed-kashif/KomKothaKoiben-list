@@ -43,17 +43,17 @@ PhoneNumber Customer::get_phone_numbers(int index)
 	return phoneNumbers[index];
 }
 
-bool Customer::change_operator_name(string phonenumber, string operatorName)
+bool Customer::change_operator_name(string phoneNumber, string operatorName)
 {
 
 
 	for (int index = 0; index < length; index++)
 	{
-		if (phoneNumbers[index].get_phone_number() == phonenumber)
+		if (phoneNumbers[index].get_phone_number() == phoneNumber)
 		{
 			phoneNumbers[index].set_operator_name(operatorName);
 			cout << endl;
-			cout << "Operator number has been changed" << endl;
+			cout << endl << phoneNumber << " operator name is been changed!!" << endl << endl;
 			return true;
 		}
 

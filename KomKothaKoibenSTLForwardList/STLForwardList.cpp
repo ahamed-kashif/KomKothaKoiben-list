@@ -72,16 +72,7 @@ void STLForwardList::delete_customer_details(int  index)
 
 
 
-Customer STLForwardList::get_next_customer()
-{
-	
-	Customer customer;
-	it = customerList.begin();
-	it++;
-	customer = *it;
-	
-	return customer;
-}
+
 
 void STLForwardList::print_customer_list()
 {

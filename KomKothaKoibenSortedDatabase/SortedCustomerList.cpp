@@ -218,3 +218,26 @@ bool SortedCustomerList::delete_phone_number(int customIndex, int phoneNumberInd
 	cout << "Customer Index or Phone Number Index is not correct!!" << endl;
 	return found;
 }
+
+bool SortedCustomerList::change_operator_name(int customerIndex, string phoneNumber, string changedOperatorName)
+{
+	NodeType* curr = customerList;
+	bool found = false;
+
+	while (curr != nullptr && !found) {
+
+		if (curr->info.get_customer_index() != customerIndex)
+			curr = curr->next;
+
+		else {
+			found = true;
+			curr->info.change_operator_name(phoneNumber,changedOperatorName);
+			
+			return found;
+		}
+	}
+	found = false;
+	cout << endl;
+	cout << "Customer Index or Phone Number Index is not correct!!" << endl;
+	return found;
+}

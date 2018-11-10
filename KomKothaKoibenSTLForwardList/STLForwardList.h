@@ -16,24 +16,23 @@ private:
 	
 	int length;
 public:
-	STLForwardList();
-	~STLForwardList();
-	//bool is_full();
-	int get_length();
+	STLForwardList();//constructor
+	~STLForwardList();//destructor
+	int get_length();//accessor
 	void make_empty();
 	bool is_empty();
-	Customer get_customer_details(int);
-	void put_customer_details(Customer);
-	void delete_customer_details(int);
+	Customer get_customer_details(int);//accessor
+	void put_customer_details(Customer);//modifier
+	void delete_customer_details(int);//modifier
 
-	//bool has_next_customer();
-	Customer get_next_customer();
+	
+	
 	//Printing List Contents
 	void print_customer_list();
 
 	//phone number updating
-	bool insert_new_number(int, PhoneNumber);
-	bool delete_phone_number(int, int);
+	bool insert_new_number(int, PhoneNumber);//modifier
+	bool delete_phone_number(int, int);//modifier
 	
 };
 

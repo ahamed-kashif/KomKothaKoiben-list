@@ -142,3 +142,21 @@ bool CustomerSTLList::delete_phone_number(int customerIndex, int phoneNumberInde
 	cout << endl << "Customer Index or Phone Number Index is not CORRECT!!" << endl << endl;
 	return false;
 }
+bool CustomerSTLList::change_operator_name(int customerIndex, string phoneNumber, string changedOperatorName)
+{
+	Customer customer;
+	for (it = customerList.begin(); it != customerList.end(); it++)
+	{
+		customer = *it;
+		if (customer.get_customer_index() == customerIndex)
+		{
+			customer.change_operator_name(phoneNumber,changedOperatorName);
+			*it = customer;
+			
+			return true;
+		}
+	}
+	cout << endl << "Customer Index or Phone Number Index is not CORRECT!!" << endl << endl;
+	return false;
+	
+}

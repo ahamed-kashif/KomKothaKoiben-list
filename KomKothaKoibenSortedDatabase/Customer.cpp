@@ -4,57 +4,120 @@
 
 Customer::Customer()
 {
-	length = 0;
+	make_empty();
 }
 
 
 Customer::~Customer()
 {
+	make_empty();
+}
+
+bool Customer::insert_phone_number(PhoneNumber phoneNumber)
+{
+	if (is_full())
+		return false;
+
+	NodeType* newNode = new NodeType;
+	newNode->info = phoneNumber;
+	NodeType* curr = phoneNumberList;
+	NodeType* prev = nullptr;
+
+	bool posFound = false;
+
+	while (curr != nullptr && !posFound) {
+		if (curr->info.get_phone_number() < phoneNumber.get_phone_number()) {
+			prev = curr;
+			curr = curr->next;
+		}
+		else {
+			posFound = true;
+			newNode->next = curr;
+			if (prev == nullptr) {
+				phoneNumberList = newNode;
+			}
+			else {
+				prev->next = newNode;
+			}
+		}
+	}
+	if (!posFound)
+	{
+		posFound = true;
+		newNode->next = curr;
+		if (prev == nullptr) {
+			phoneNumberList = newNode;
+		}
+		else {
+			prev->next = newNode;
+		}
+	}
+	length++;
+	return posFound;
 
 }
 
-void Customer::insert_phone_number(PhoneNumber phoneNumber)
+bool Customer::delete_phone_number(string phoneNumber)
 {
-	if (length < maxPhoneNumbers)
-	{
-		phoneNumbers[length] = phoneNumber;
-		length++;
+
+	NodeType* curr = phoneNumberList;
+	NodeType* prev = nullptr;
+	bool found = false;
+	while (curr != nullptr && !found) {
+		if (curr->info.get_phone_number() == phoneNumber) {
+			found = true;
+			if (prev == nullptr) {
+				phoneNumberList = curr->next;
+			}
+			else {
+				prev->next = curr->next;
+			}
+			delete curr;
+			length--;
+		}
+		else {
+			prev = curr;
+			curr = curr->next;
+		}
 	}
-	else
-	{
-		cout << "Can't Enter more than 15 numbers!!";
-	}
+	return found;
 
 }
 
-void Customer::delete_phone_number(int phoneNumberindex)
+PhoneNumber Customer::get_phone_numbers(string phoneNumber)
 {
-
-	for (int index = phoneNumberindex; index < length; index++)
-	{
-		phoneNumbers[index] = phoneNumbers[index + 1];
-		length--;
+	NodeType* curr = phoneNumberList;
+	bool found = false;
+	while (curr != nullptr && !found) {
+		if (curr->info.get_phone_number != phoneNumber)
+			curr = curr->next;
+		else {
+			found = true;
+			return curr->info;
+		}
 	}
-
-}
-
-PhoneNumber Customer::get_phone_numbers(int index)
-{
-	return phoneNumbers[index];
+	found = false;
+	cout << endl;
+	cout << "Phone Number is not correct!!" << endl;
+	return curr->info;
 }
 
 bool Customer::change_operator_name(string phoneNumber, string operatorName)
 {
 
-
-	for (int index = 0; index < length; index++)
+	NodeType* curr = phoneNumberList;
+	while(curr!=nullptr)
 	{
-		if (phoneNumbers[index].get_phone_number() == phoneNumber)
+		if (curr->info.get_phone_number() == phoneNumber)
 		{
-			phoneNumbers[index].set_operator_name(operatorName);
+			curr->info.set_operator_name(operatorName);
 			cout << endl;
 			cout << endl << phoneNumber << " operator name is been changed!!" << endl << endl;
 			return true;
+		}
+		else
+		{
+			curr = curr->next;
 		}
 
 	}
@@ -65,17 +128,33 @@ bool Customer::change_operator_name(string phoneNumber, string operatorName)
 
 void Customer::print_customer_deatails()
 {
+	NodeType* curr = phoneNumberList;
+	int index = 0;
 	cout << "Customer Index Number:\t\t" << customerIndex << endl;
 	print_person();
-	for (int index = 0; index < length; index++)
+	while (curr != nullptr)
 	{
 		cout << index + 1;
 		cout << ".\t";
-		phoneNumbers[index].print_phone_number();
+		curr->info.print_phone_number();
 		cout << endl;
+		curr = curr->next;
+		index++;
 	}
 	cout << endl;
 	cout << endl;
+}
+
+void Customer::make_empty()
+{
+	length = 0;
+	phoneNumberList = nullptr;
+	currentPosition = nullptr;
+}
+
+bool Customer::is_full()
+{
+	return (length==15);
 }
 
 void Customer::set_customer_index(int index)

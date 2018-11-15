@@ -149,6 +149,15 @@ void Person::print_person()
 	cout << age << endl;
 	cout << "Gender:\t";
 	cout << gender << endl;
+	cout << "Marital Status:\t";
+	if (maritalStatus)
+	{
+		cout << "Married" << endl;
+	}
+	else
+	{
+		cout << "Unmarried" << endl;
+	}
 	cout << "Present Address:\t" + presentAddress << endl;
 	cout << "Permanent Address:\t" + permanentAddress << endl;
 	cout << "Height(Inches):\t";

@@ -93,6 +93,7 @@ void CustomerSTLList::delete_customer_details(int customerIndex)
 
 void CustomerSTLList::print_customer_list()
 {
+	cout << endl << "Here Customer List is sorted in terms of person's age" << endl << endl;
 	Customer customer;
 
 	for (it = customerList.begin(); it != customerList.end(); it++)

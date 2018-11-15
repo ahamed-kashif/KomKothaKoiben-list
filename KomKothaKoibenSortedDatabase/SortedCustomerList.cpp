@@ -158,7 +158,7 @@ Customer SortedCustomerList::get_next_customer()
 
 void SortedCustomerList::print_customer_list()
 {
-	cout << "List is sorted in terms of person's age" << endl;
+	cout <<endl<< "Here Customer List is sorted in terms of person's age" << endl<<endl;
 	for (int index = 0; index < length; index++)
 	{
 		if (has_next_customer())

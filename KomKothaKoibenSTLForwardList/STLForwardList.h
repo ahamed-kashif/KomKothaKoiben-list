@@ -33,6 +33,6 @@ public:
 	//phone number updating
 	bool insert_new_number(int, PhoneNumber);//modifier
 	bool delete_phone_number(int, int);//modifier
-	
+	bool change_operator_name(int, string, string);//modifier
 };
 

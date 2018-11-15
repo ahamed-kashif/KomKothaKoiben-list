@@ -145,3 +145,28 @@ bool STLForwardList::delete_phone_number(int customIndex, int phoneNumberIndex)
 	return found;
 }
 
+bool STLForwardList::change_operator_name(int customerIndex, string phoneNumber, string changedOperatorName)
+{
+	bool found = false;
+	Customer customer;
+	for (it = customerList.begin(); it != customerList.end(); it++) {
+
+		customer = *it;
+
+		if (customer.get_customer_index() != customerIndex)
+			continue;
+
+		else {
+			found = true;
+			customer.change_operator_name(phoneNumber,changedOperatorName);
+			*it = customer;
+			
+			return found;
+		}
+	}
+	found = false;
+	cout << endl;
+	cout << "Customer Index or Phone Number Index is not correct!!" << endl;
+	return found;
+}
+

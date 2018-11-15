@@ -5,6 +5,13 @@
 using namespace std;
 
 
+class MisMatch {
+public:
+	std::string ErrorMessage() { return "Number is not correct"; }
+};
+
+
+
 class SortedCustomerList
 {
 public:
@@ -32,7 +39,7 @@ public:
 	void print_customer_list();
 
 	bool insert_new_number(int, PhoneNumber);
-	bool delete_phone_number(int, int);
+	bool delete_phone_number(int, string);
 	bool change_operator_name(int, string, string);
 private:
 	NodeType* customerList = nullptr;

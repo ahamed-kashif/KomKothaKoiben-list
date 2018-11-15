@@ -17,7 +17,7 @@ public:
 
 private:
 	NodeType* phoneNumberList = nullptr;
-	int length = 0;
+	int length;
 	NodeType* currentPosition = nullptr;
 	int customerIndex;
 

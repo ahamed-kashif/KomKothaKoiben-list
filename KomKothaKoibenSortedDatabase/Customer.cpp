@@ -74,6 +74,7 @@ bool Customer::delete_phone_number(string phoneNumber)
 			}
 			delete curr;
 			length--;
+			
 		}
 		else {
 			prev = curr;
@@ -89,7 +90,7 @@ PhoneNumber Customer::get_phone_numbers(string phoneNumber)
 	NodeType* curr = phoneNumberList;
 	bool found = false;
 	while (curr != nullptr && !found) {
-		if (curr->info.get_phone_number != phoneNumber)
+		if (curr->info.get_phone_number() != phoneNumber)
 			curr = curr->next;
 		else {
 			found = true;

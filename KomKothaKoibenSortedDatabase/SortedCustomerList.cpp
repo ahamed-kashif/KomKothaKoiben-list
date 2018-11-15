@@ -188,7 +188,7 @@ bool SortedCustomerList::insert_new_number(int customIndex, PhoneNumber phn)
 
 }
 
-bool SortedCustomerList::delete_phone_number(int customIndex, int phoneNumberIndex)
+bool SortedCustomerList::delete_phone_number(int customIndex, string phoneNumber)
 {
 	NodeType* curr = customerList;
 	bool found = false;
@@ -200,8 +200,16 @@ bool SortedCustomerList::delete_phone_number(int customIndex, int phoneNumberInd
 
 		else {
 			found = true;
-			curr->info.delete_phone_number(phoneNumberIndex);
-			cout << "A Phone Number is Deleted from " << curr->info.get_name() << "'s Information!!" << endl << endl;
+			try
+			{
+				curr->info.delete_phone_number(phoneNumber);
+				cout << "A Phone Number is Deleted from " << curr->info.get_name() << "'s Information!!" << endl << endl;
+			}
+			catch
+			{
+				throw "Number is not correct";
+			}
+			
 			if (curr->info.phone_number_get_length() == 0)
 			{
 				cout << curr->info.get_name() << "'s information is DELETED!!" << endl << endl;

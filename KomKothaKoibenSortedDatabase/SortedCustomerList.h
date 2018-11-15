@@ -1,15 +1,10 @@
 #pragma once
 #include "Customer.h"
 #include<string>
+#include<exception>
 
 using namespace std;
 
-
-class MisMatch {
-public:
-	std::string ErrorMessage() { return "Number is not correct"; }
-};
-
 
 
 class SortedCustomerList

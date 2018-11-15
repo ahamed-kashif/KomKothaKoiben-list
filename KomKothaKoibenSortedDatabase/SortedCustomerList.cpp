@@ -200,14 +200,10 @@ bool SortedCustomerList::delete_phone_number(int customIndex, string phoneNumber
 
 		else {
 			found = true;
-			try
+			if (curr->info.get_phone_numbers(phoneNumber).get_phone_number() == phoneNumber)
 			{
 				curr->info.delete_phone_number(phoneNumber);
 				cout << "A Phone Number is Deleted from " << curr->info.get_name() << "'s Information!!" << endl << endl;
-			}
-			catch
-			{
-				throw "Number is not correct";
 			}
 			
 			if (curr->info.phone_number_get_length() == 0)

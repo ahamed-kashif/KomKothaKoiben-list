@@ -158,6 +158,11 @@ bool Customer::is_full()
 	return (length==15);
 }
 
+void Customer::reset_list()
+{
+	currentPosition = nullptr;
+}
+
 void Customer::set_customer_index(int index)
 {
 	customerIndex = index;

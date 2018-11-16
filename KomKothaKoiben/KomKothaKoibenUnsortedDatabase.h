@@ -2,7 +2,7 @@
 #include "Customer.h"
 #include"PhoneNumber.h"
 
-class UnsortedCustomerList
+class KomKothaKoibenUnsortedDatabase
 {
 public:
 
@@ -11,8 +11,8 @@ public:
 		NodeType* next = nullptr;
 	};
 public:
-	UnsortedCustomerList();
-	~UnsortedCustomerList();
+	KomKothaKoibenUnsortedDatabase();
+	~KomKothaKoibenUnsortedDatabase();
 	bool is_full();
 	int get_length();
 	void make_empty();
@@ -29,7 +29,7 @@ public:
 
 	//phone number updating
 	bool insert_new_number(int,PhoneNumber);
-	bool delete_phone_number(int,int);
+	bool delete_phone_number(int,string);
 	bool change_operator_name(int, string, string);
 private:
 	NodeType* customerList = nullptr;

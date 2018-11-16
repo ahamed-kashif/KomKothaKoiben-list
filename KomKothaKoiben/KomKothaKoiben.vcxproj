@@ -154,16 +154,16 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="Customer.cpp" />
-    <ClCompile Include="KomKothaKoibenUnsortedDatabase.cpp" />
+    <ClCompile Include="Driver.cpp" />
     <ClCompile Include="Person.cpp" />
     <ClCompile Include="PhoneNumber.cpp" />
-    <ClCompile Include="UnsortedCustomerList.cpp" />
+    <ClCompile Include="KomKothaKoibenUnsortedDatabase.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Customer.h" />
     <ClInclude Include="Person.h" />
     <ClInclude Include="PhoneNumber.h" />
-    <ClInclude Include="UnsortedCustomerList.h" />
+    <ClInclude Include="KomKothaKoibenUnsortedDatabase.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

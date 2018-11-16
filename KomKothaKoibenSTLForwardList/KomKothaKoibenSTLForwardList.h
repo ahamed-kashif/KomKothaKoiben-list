@@ -8,7 +8,7 @@
 using namespace std;
 
 
-class STLForwardList
+class KomKothaKoibenSTLForwardList
 {
 private:
 	std::forward_list<Customer> customerList;
@@ -16,8 +16,8 @@ private:
 	
 	int length;
 public:
-	STLForwardList();//constructor
-	~STLForwardList();//destructor
+	KomKothaKoibenSTLForwardList();//constructor
+	~KomKothaKoibenSTLForwardList();//destructor
 	int get_length();//accessor
 	void make_empty();
 	bool is_empty();
@@ -32,7 +32,7 @@ public:
 
 	//phone number updating
 	bool insert_new_number(int, PhoneNumber);//modifier
-	bool delete_phone_number(int, int);//modifier
+	bool delete_phone_number(int, string);//modifier
 	bool change_operator_name(int, string, string);//modifier
 };
 

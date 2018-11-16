@@ -153,14 +153,14 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="Customer.cpp" />
-    <ClCompile Include="CustomerSTLList.cpp" />
+    <ClCompile Include="KomKothaKoibenSTLList.cpp" />
     <ClCompile Include="Person.cpp" />
     <ClCompile Include="PhoneNumber.cpp" />
-    <ClCompile Include="KomKothaKoibenSTLList.cpp" />
+    <ClCompile Include="Driver.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Customer.h" />
-    <ClInclude Include="CustomerSTLList.h" />
+    <ClInclude Include="KomKothaKoibenSTLList.h" />
     <ClInclude Include="Person.h" />
     <ClInclude Include="PhoneNumber.h" />
   </ItemGroup>

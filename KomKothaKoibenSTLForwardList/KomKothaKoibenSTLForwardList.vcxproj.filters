@@ -15,9 +15,6 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="KomKothaKoibenSTLForwardList.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="Person.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
@@ -27,7 +24,10 @@
     <ClCompile Include="Customer.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="STLForwardList.cpp">
+    <ClCompile Include="Driver.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="KomKothaKoibenSTLForwardList.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
@@ -41,7 +41,7 @@
     <ClInclude Include="Customer.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="STLForwardList.h">
+    <ClInclude Include="KomKothaKoibenSTLForwardList.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

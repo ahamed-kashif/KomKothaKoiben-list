@@ -34,6 +34,7 @@ public:
 	void print_customer_deatails();     //printing customer details
 	void make_empty();
 	bool is_full();
+	void reset_list();
 
 	void set_customer_index(int);//modifier
 	int get_customer_index();//accessor

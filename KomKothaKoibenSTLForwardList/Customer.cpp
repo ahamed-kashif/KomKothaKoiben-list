@@ -4,56 +4,75 @@
 
 Customer::Customer()
 {
-	length = 0;
+	make_empty();
 }
 
 
 Customer::~Customer()
 {
-
+	make_empty();
 }
 
 void Customer::insert_phone_number(PhoneNumber phoneNumber)
 {
-	if (length < maxPhoneNumbers)
-	{
-		phoneNumbers[length] = phoneNumber;
-		length++;
-	}
-	else
-	{
-		cout << "Can't Enter more than 15 numbers!!";
-	}
+	phoneNumberList.push_front(phoneNumber);
+	length++;
 
 }
 
-void Customer::delete_phone_number(int phoneNumberindex)
+void Customer::delete_phone_number(string phoneNumber)
 {
 
-	for (int index = phoneNumberindex; index < length; index++)
+	PhoneNumber temPhoneNumber;
+	std::forward_list<PhoneNumber> temPhoneNumberList;
+	for (it = phoneNumberList.begin(); it != phoneNumberList.end(); it++)
 	{
-		phoneNumbers[index] = phoneNumbers[index + 1];
-		length--;
+		temPhoneNumber = *it;
+		if (temPhoneNumber.get_phone_number() != phoneNumber)
+		{
+
+			temPhoneNumberList.push_front(temPhoneNumber);
+
+		}
+
 	}
+	phoneNumberList=temPhoneNumberList;
+	length--;
 
 }
 
-PhoneNumber Customer::get_phone_numbers(int index)
+PhoneNumber Customer::get_phone_numbers(string phoneNumber)
 {
-	return phoneNumbers[index];
+	PhoneNumber temPhoneNumber;
+	for (it = phoneNumberList.begin(); it != phoneNumberList.end(); it++)
+	{
+		temPhoneNumber = *it;
+		if (temPhoneNumber.get_phone_number() == phoneNumber)
+		{
+			return temPhoneNumber;
+		}
+		else
+		{
+			cout << "Phone Number does not match";
+			return phoneNumberList.front();
+		}
+	}
 }
 
 bool Customer::change_operator_name(string phonenumber, string operatorName)
 {
 
+	PhoneNumber temPhoneNumber;
 
-	for (int index = 0; index < length; index++)
+	for (it=phoneNumberList.begin();it!=phoneNumberList.end();it++)
 	{
-		if (phoneNumbers[index].get_phone_number() == phonenumber)
+		temPhoneNumber = *it;
+		if (temPhoneNumber.get_phone_number() == phonenumber)
 		{
-			phoneNumbers[index].set_operator_name(operatorName);
+			temPhoneNumber.set_operator_name(operatorName);
 			cout << endl;
-			cout << "From "+name+"'s details "<< index+1 << ".\t" << phoneNumbers[index].get_phone_number() << " Operator number has been changed!!" << endl;
+			cout << "From "+name+"'s details "<< temPhoneNumber.get_phone_number() << " Operator name has been changed!!" << endl;
+			*it = temPhoneNumber;
 			return true;
 		}
 
@@ -65,14 +84,21 @@ bool Customer::change_operator_name(string phonenumber, string operatorName)
 
 void Customer::print_customer_deatails()
 {
+	int index = 0;
+
+	PhoneNumber temPhoneNumber;
+
 	cout << "Customer Index Number:\t\t" << customerIndex << endl;
 	print_person();
-	for (int index = 0; index < length; index++)
+
+	for (it = phoneNumberList.begin(); it != phoneNumberList.end(); it++)
 	{
+		temPhoneNumber=*it;
 		cout << index + 1;
 		cout << ".\t";
-		phoneNumbers[index].print_phone_number();
+		temPhoneNumber.print_phone_number();
 		cout << endl;
+		index++;
 	}
 	cout << endl;
 	cout << endl;
@@ -91,4 +117,10 @@ int Customer::get_customer_index()
 int Customer::phone_number_get_length()
 {
 	return length;
+}
+
+void Customer::make_empty()
+{
+	length = 0;
+	phoneNumberList.clear();
 }

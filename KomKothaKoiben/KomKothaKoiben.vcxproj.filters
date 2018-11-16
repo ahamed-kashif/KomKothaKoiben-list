@@ -24,7 +24,7 @@
     <ClCompile Include="PhoneNumber.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="UnsortedCustomerList.cpp">
+    <ClCompile Include="Driver.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="KomKothaKoibenUnsortedDatabase.cpp">
@@ -41,7 +41,7 @@
     <ClInclude Include="PhoneNumber.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="UnsortedCustomerList.h">
+    <ClInclude Include="KomKothaKoibenUnsortedDatabase.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

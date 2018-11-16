@@ -24,7 +24,7 @@
     <ClCompile Include="Customer.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="CustomerSTLList.cpp">
+    <ClCompile Include="Driver.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="KomKothaKoibenSTLList.cpp">
@@ -41,7 +41,7 @@
     <ClInclude Include="Customer.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="CustomerSTLList.h">
+    <ClInclude Include="KomKothaKoibenSTLList.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

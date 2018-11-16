@@ -9,26 +9,28 @@
 using namespace std;
 
 
-class CustomerSTLList
+class KomKothaKoibenSTLList
 {
 private:
 	std::list<Customer> customerList;
 	std::list<Customer>::iterator it;
 	
+	
 
 	
 public:
-	CustomerSTLList();
-	~CustomerSTLList();
+	KomKothaKoibenSTLList();
+	~KomKothaKoibenSTLList();
 
 	//bool is_full();
 
 	int get_length();
 	void make_empty();
 	bool is_empty();
+	
 	Customer get_customer_details(int);
 	bool put_customer_details(Customer);
-	void delete_customer_details(int);
+	bool delete_customer_details(int);
 
 
 
@@ -37,7 +39,7 @@ public:
 
 	//phone number updating
 	bool insert_new_number(int, PhoneNumber);
-	bool delete_phone_number(int, int);
+	bool delete_phone_number(int, string);
 	bool change_operator_name(int, string, string);
 
 };
